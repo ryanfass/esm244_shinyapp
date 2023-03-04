@@ -3,7 +3,7 @@ library(shiny)
 library(shinythemes)
 library(shinyWidgets)
 # source("/helpers.R")
-trees_old <- read_csv("data/Laguna_TreesRaw_Master/plot_status_no_dead.csv")
+trees_old <- read_csv("data/Laguna_TreesRaw_Master/plot_lifestage_shiny.csv")
 
 
 # Define UI for application that draws a histogram
@@ -22,9 +22,9 @@ ui <- fluidPage(theme = shinytheme("superhero"),
                       tabPanel("Study Site"),
                        tabPanel("Trees",
                                sidebarLayout(
-                                 sidebarPanel(radioButtons(inputId = 'stage',
+                                 sidebarPanel(radioButtons(inputId = 'life_stage',
                                                            label = "Choose Black Oak Life-stage",
-                                                           choices = c("Adult", "Sapling"))),
+                                                           choices = trees_old$life_stage)),
                                  mainPanel(
                                    plotOutput("distPlot")
                                  )
@@ -39,8 +39,9 @@ ui <- fluidPage(theme = shinytheme("superhero"),
 server <- function(input, output) {
 
     output$distPlot <- renderPlot({
-      input$choices %>% 
-      ggplot(data = plot_status_no_dead, aes(fill = status, x = treatment_burn, y = count))+
+      tree_old %>% 
+        filter(order== input$life_stage) %>% 
+      ggplot(data = trees_old, aes(fill = status, x = treatment_burn, y = count))+
         geom_bar(stat= "identity", 
                  position= "stack",
                  color="black")+
