@@ -1,0 +1,59 @@
+---
+title: "data_organization_saplings"
+author: "Ryan Fass"
+date: "2023-01-10"
+output: 
+  html_document:
+    code_folding: hide
+---
+
+```{r setup, include=TRUE, message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+```{r}
+library(tidyverse)
+library(here)
+library(janitor)
+```
+
+```{r}
+oak_t1 <- read_csv(here("data", "oak_treat1_sap_all.csv"))#skip allows you to skip the row that may cause you an issue in not reading in the data correctly.
+#oak_t1_na <-oak_t1 %>% mutate_all(na_if,"") 
+oak_t2 <- read_csv(here("data", "oak_treat2_sap_all.csv"))
+oak_t3 <- read_csv(here("data", "oak_treat3_sap_all.csv"))
+oak_t4 <- read_csv(here("data", "oak_treat4_sap_all.csv"))
+oak_tcontrol <- read_csv(here("data", "oak_treat_controls_sap_all.csv"))
+oak_t13 <- read_csv(here("data", "oak_treat13_sap_all.csv"))
+plot_treat_exp <- read_csv(here("data", "plot_treatment_exp.csv"))
+
+clean_names(oak_t1)
+clean_names(oak_t2)
+clean_names(oak_t3)
+clean_names(oak_t4)
+clean_names(oak_tcontrol)
+clean_names(oak_t13)
+```
+
+```{r}
+oak_saplings_all <-rbind(oak_t1, oak_t2, oak_t3, oak_t4, oak_t13, oak_tcontrol) %>% 
+  clean_names() 
+
+oak_sapling_final <- oak_saplings_all %>%
+  mutate(monitoring_status = case_when(monitoring_status == "PreBurnYear1"~"PreBurn", TRUE ~ monitoring_status)) %>%
+  dplyr::select(!index & !count & !avg_crwn_rto & !sub_frac & !macro_plot_size & !field_team & !entry_team & !visited)
+
+head(oak_sapling_final)
+
+
+```
+
+```{r}
+saplings_meta <- oak_sapling_final %>%
+  left_join(plot_treat_exp, by = c("macro_plot_name"))
+head(saplings_meta)
+```
+```{r}
+write.csv(saplings_meta, here("saplings_meta.csv"))
+```
+

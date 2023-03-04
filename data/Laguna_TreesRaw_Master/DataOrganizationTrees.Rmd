@@ -1,0 +1,234 @@
+---
+title: "DataOrganization"
+output: html_document
+---
+
+
+
+```{r cars}
+library('tidyverse')
+library('ggplot2')
+library('gtools')
+library(here)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+##What are we looping over? each file
+##So, we need to get a list of all the files
+
+files = list.files(path = "./trees_raw/" , pattern = 'oak_treat*' )
+files
+
+```
+
+
+```{r}
+df.meta = data.frame()
+for (x in files){
+    df = read.csv(paste0('./trees_raw/', x))
+    Ncol = ncol(df)
+    d = cbind(x, Ncol)
+    df.meta = rbind(df.meta, d)
+}
+```
+
+
+```{r}
+for (x in files){
+    df = read.csv(paste0('./trees_raw/', x))
+    Ncol = ncol(df)
+    Year = strsplit(x, "_")[[1]][3]
+    Year = strsplit(Year, "[.]")[[1]][1]
+    if(Year != 'yr1' & Ncol != "44"){
+        df = df %>% dplyr::select(-X)
+    }
+    write.csv(df, paste0("./trees_new/", x), row.names = FALSE)
+   }
+
+```
+
+
+
+
+```{r}
+files = list.files(path = "./trees_new/", pattern = 'oak*')
+data = data.frame()
+for (x in files){
+    df = read.csv(paste0('./trees_new/', x))
+    file = x
+    Ncol = ncol(df)
+    d = cbind(file, Ncol)
+    data = rbind(data, d)
+
+   }
+
+```
+
+
+
+```{r}
+files = list.files(path = "./trees_new/", pattern = 'oak*')
+
+df.meta = data.frame()
+col.df = data.frame()
+
+for (x in files){
+    Treatment = strsplit(x , '[_]')[[1]][2]
+    Year = strsplit(x, "_")[[1]][3]
+    Year = strsplit(Year, "[.]")[[1]][1]
+    df = read.csv(paste0("./trees_new/", x))
+    if (Year == "yr1"){
+        df = df} else{
+        df$UV2 = NA
+        
+    }
+    
+    df$Year = Year
+    df$Treatment = Treatment
+    NCol = ncol(df)
+    file = x
+    d = cbind(file, Ncol)
+    col.df = rbind(col.df, d)
+    df.meta  = smartbind(df.meta,  df)
+}
+
+write.csv(df.meta, "./trees_new/df.meta.csv", row.names = FALSE)
+```
+
+
+```{r}
+
+#Drop rows with only na
+df.2 = df.meta %>% drop_na(TagNo)
+write.csv(df.2, "./trees_new/df.meta.csv", row.names = FALSE)
+
+df.meta = read.csv("./trees_new/df.meta.csv")
+treatment.df = read.csv('./trees_new/plot_treatment_exp.csv')
+
+#add treatment burn information
+df.meta = left_join(df.meta, treatment.df)
+write.csv(df.meta, "./trees_new/df.meta.csv", row.names = FALSE)
+```
+
+```{r}
+new_resprout_2022 <- read.csv(here("trees_new", "newexp_trees_resprout_2022.csv")) %>% 
+  mutate(experiment_resprout = "new_exp_2022") %>%
+  dplyr::select(!Height & !Crown.Class & !Base.to.Crown..m. & !Crown.Radius & !Decay.Class..dead. & !Char.Ht..m. & !Scorch.Ht..m. & !Scorth.. & !Torch..)
+old_resprout_2021 <- read.csv(here("trees_new", "oldexp_trees_resprout_2021.csv")) %>% 
+  mutate(experiment_resprout = "old_exp_2021")%>%
+  dplyr::select(!Height & !Crown.Class & !Base.to.Crown..m. & !Crown.Radius & !Decay.Class..dead. & !Char.Ht..m. & !Scorch.Ht..m. & !Scorth.. & !Torch..)
+old_resprout_2022 <- read.csv(here("trees_new", "oldexp_trees_resprout_2022.csv")) %>% 
+  mutate(experiment_resprout = "old_exp_2022") %>%
+  rename("Crown.Ratio" = "crown.ratio")
+resprout_all <- rbind(new_resprout_2022, old_resprout_2021, old_resprout_2022)
+
+trees_all_data <- df.meta %>% 
+  dplyr::select(MacroPlot.Name, Monitoring.Status, Date, TagNo, Status, DBH, Ht, CrwnRto, CrwnCl, LiCrBHt, CrwnRad, DecayCl, CharHt, ScorchHt, CrScPct, Comment, UV1, UV2, Species.Symbol, Year, Treatment, treatment_burn, experiment) %>% 
+  left_join(resprout_all, by = c("MacroPlot.Name", "Monitoring.Status", "TagNo")) %>%
+  mutate(Monitoring.Status = case_when(Monitoring.Status== "PreBurnYear1"~"PreBurn", TRUE ~ Monitoring.Status))
+
+write.csv(trees_all_data, here("trees_all_data.csv"))
+```
+
+
+```{r}
+#Figure of ratio of live to dead trees before fire between treatments
+#Before fire - Monitoring.Status - PreBurnYear1
+#Treatments - post_budbreak; pre_budbreak; control
+
+##Create new dataframe with just pre burn year 1
+
+df.meta = read.csv("./trees_new/df.meta.csv")
+
+df.preburn = df.meta %>% filter(Monitoring.Status == "PreBurn")
+treatments = unique(df.preburn$treatment_burn)
+treatments
+
+
+df.ratios = data.frame()
+for (x in treatments){
+    df.treatment = df.preburn %>% filter(treatment_burn == x)
+    Treatment = x
+    ratio = (nrow(df.treatment  %>% filter(Status == "L")))/(nrow(df.treatment  %>% filter(Status == "D")))
+    df.temp = cbind(Treatment, ratio)
+    df.ratios = rbind(df.ratios, df.temp )
+}
+
+##Create new dataframe with just pre burn year 1
+df.preburn = df.meta %>% filter(Monitoring.Status == "PreBurn")
+treatments = unique(df.preburn$treatment_burn)
+treatments
+
+
+df.ratios.yr1 = data.frame()
+for (x in treatments){
+    df.treatment = df.preburn %>% filter(treatment_burn == x)
+    Treatment = x
+    ratio = (nrow(df.treatment  %>% filter(Status == "L")))/(nrow(df.treatment  %>% filter(Status == "D")))
+    df.temp = cbind(Treatment, ratio)
+    df.ratios.yr1 = rbind(df.ratios.yr1 , df.temp )
+}
+
+df.ratios.yr1 = df.ratios.yr1 %>% mutate(MonitoringStatus = "PreBurn")
+
+ggplot(df.ratios.yr1, aes(x = Treatment, y = ratio)) +
+    geom_col() +
+    theme_bw(base_size = 15) +
+    ylab("Live:Dead")
+```
+
+
+```{r}
+##Create new dataframe with just pre burn year 1
+df.preburn = df.meta %>% filter(Monitoring.Status == "PostBurnYear1")
+treatments = unique(df.preburn$treatment_burn)
+treatments
+
+
+df.ratios.yr1.post = data.frame()
+for (x in treatments){
+    df.treatment = df.preburn %>% filter(treatment_burn == x)
+    Treatment = x
+    ratio = (nrow(df.treatment  %>% filter(Status == "L")))/(nrow(df.treatment  %>% filter(Status == "D")))
+    df.temp = cbind(Treatment, ratio)
+    df.ratios.yr1.post = rbind(df.ratios.yr1.post, df.temp )
+}
+
+df.ratios.yr1.post = df.ratios.yr1.post %>% mutate(MonitoringStatus = "PostBurnYear1")
+df.ratios.yr1.post
+
+ggplot(df.ratios.yr1.post, aes(x = Treatment, y = ratio)) +
+    geom_col() +
+    theme_bw(base_size = 15) +
+    ylab("Live:Dead")
+
+```
+
+
+```{r}
+
+df.yr1 = rbind(df.ratios.yr1, df.ratios.yr1.post)
+df.yr1$ratio = as.numeric(df.yr1$ratio)
+df.yr1 = df.yr1 %>%
+    mutate(Treatment.MonitoringStatus = paste0(Treatment, "_", MonitoringStatus))
+
+
+
+```
+
+
+```{r}
+
+ggplot(df.yr1, aes(x = Treatment.MonitoringStatus, y = ratio, fill = MonitoringStatus)) +
+    geom_col() +
+    theme_bw(base_size = 8) +
+    ylab("Live:Dead") +
+    scale_x_discrete(limits = c('control_PreBurnYear1', 'control_PostBurnYear1', 'pre_budbreak_PreBurnYear1', 
+                               'pre_budbreak_PostBurnYear1', 'post_budbreak_PreBurnYear1','post_budbreak_PostBurnYear1' ))
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

@@ -10,6 +10,8 @@ ui <- fluidPage(theme = shinytheme("superhero"),
 
         # Tabs of our different widgets
           tabsetPanel(type = "tabs",
+                      tabPanel("Prescribed Fire", tags$video(src="fire_timelapse.MOV",width= "300px", type="video/mp4", controls="controls")),
+                      tabPanel("Study Site"),
                       tabPanel("Trees",
                                sidebarLayout(
                                  sidebarPanel(radioButtons(inputId = 'penguin_species',

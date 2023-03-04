@@ -1,0 +1,10 @@
+,monitoring_status,treatment_burn,experiment,live,dead,topkill
+1,PreBurn,control,old,18,0,0
+2,PreBurn,dormant_burn,old,37,0,0
+3,PreBurn,leafout_burn,old,22,0,0
+4,PostBurnYear1,control,old,18,0,0
+5,PostBurnYear1,dormant_burn,old,36,1,1
+6,PostBurnYear1,leafout_burn,old,16,1,5
+7,PostBurnYear2,control,old,18,0,0
+8,PostBurnYear2,dormant_burn,old,35,1,2
+9,PostBurnYear2,leafout_burn,old,16,2,5

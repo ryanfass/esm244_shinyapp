@@ -1,0 +1,120 @@
+---
+title: "Trees_meta"
+author: "Ryan Fass"
+date: "2023-01-03"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(here)
+library(janitor)
+library(knitr)
+library(dplyr)
+library(patchwork)
+```
+
+### Read in data, clean the data, and change values that say Post and Pre budbreak to leafout and dormant budbreak
+```{r}
+trees_all_data <- read_csv(here('trees_all_data.csv'))
+trees_all_data <- clean_names(trees_all_data) %>% 
+  mutate(treatment_burn = case_when(treatment_burn== "post_budbreak" ~ "leafout_burn", 
+                                    treatment_burn== "pre_budbreak" ~ "dormant_burn", 
+                                    TRUE~ treatment_burn))
+
+write.csv(trees_all_data, here("trees_all_data.csv"))
+```
+
+
+   
+```{r}
+trees_tk_status_1 <- trees_all_data %>%
+  select(macro_plot_name, monitoring_status, status_x, species_symbol,  treatment_burn,  experiment, top_kill_y_n) %>%
+  filter(species_symbol %in% c("QUKE")) %>%
+  mutate(live = status_x == "L") %>%
+  mutate(dead = status_x == "D",
+         final_status = case_when(live == TRUE ~ "alive",
+                                  dead == TRUE & top_kill_y_n == "N" ~ "dead",
+                                  dead == TRUE & top_kill_y_n == "Y" ~ "topkill",
+                                  dead == TRUE & is.na(top_kill_y_n) == TRUE ~ "dead"),
+         monitoring_date = case_when(experiment == "old" & monitoring_status == "PreBurn" ~ "summer_2020",
+                                     experiment == "old" & monitoring_status == "PostBurnYear1" ~ "summer_2021",
+                                     experiment == "old" & monitoring_status == "PostBurnYear2" ~ "summer_2022",
+                                     experiment == "new" & monitoring_status == "PreBurn" ~ "summer_2021",
+                                     experiment == "new" & monitoring_status == "PostBurnYear1" ~ "summer_2022"))
+  
+
+trees_tk_status_1
+
+group_tk_bar_old <- trees_tk_status_1 %>% 
+  filter(treatment_burn == "control" | treatment_burn != "control" & experiment == "old") %>% 
+  select(!experiment) %>% 
+  group_by(monitoring_date, treatment_burn) %>% 
+  count(final_status) %>% 
+  ungroup()
+
+group_tk_bar_new <- trees_tk_status_1 %>% 
+  filter(treatment_burn == "control" | treatment_burn != "control" & experiment == "new") %>%
+  filter(monitoring_date != "summer_2020") %>% 
+  select(!experiment) %>% 
+  group_by(monitoring_date, treatment_burn) %>% 
+  count(final_status) %>% 
+  ungroup()
+
+group_tk_old <- group_tk_bar_old %>% 
+  pivot_wider(names_from = final_status, values_from = n) %>% 
+  mutate(dead = replace_na(dead, 0),
+         topkill = replace_na(topkill, 0))
+
+#group_tk = trees_tk_status_1 %>% 
+#  group_by(monitoring_status, treatment_burn, experiment) %>%  
+#  summarise(live = sum(live),
+#            dead = sum(dead),
+#            topkill = sum(top_kill_y_n == "Y")) %>% 
+#  mutate(monitoring_status = as.factor(monitoring_status))
+
+group_tk_bar$monitoring_status <- factor(group_tk_bar$monitoring_status, levels = c("PreBurn", "PostBurnYear1", "PostBurnYear2"))
+group_tk$monitoring_status <- factor(group_tk$monitoring_status, levels = c("PreBurn", "PostBurnYear1", "PostBurnYear2"))
+```
+
+```{r}
+ggplot(group_tk, aes(x = monitoring_status, y = alive, col= treatment_burn)) +
+  geom_point() +
+  facet_wrap(~experiment)+
+  theme_classic()
+
+old_exp_bar_plot <-  ggplot()+
+  geom_bar(data = group_tk_bar_old, aes(x = monitoring_date, y = n, group = treatment_burn, fill =final_status),
+           stat = "identity", position = position_dodge())+
+  #geom_text(data = group_tk_bar_old, aes(x = monitoring_date, y = n, group = treatment_burn, label = treatment_burn), 
+           # position = position_dodge())+
+  labs(y = 'Number of Trees',
+       title = "Plots Burned 2021") +
+  ylim(0, 70)+
+  theme_classic()
+
+new_exp_bar_plot <-  ggplot(group_tk_bar_new, aes(x = monitoring_date, y = n, group = treatment_burn, fill =final_status))+
+  geom_bar(stat = "identity", position = position_dodge())+
+  labs(y = 'Number of Trees',
+       title = "Plots Burned 2022") +
+  ylim(0,70)+
+  theme_classic()
+
+old_exp_bar_plot + new_exp_bar_plot
+```
+
+```{r}
+group_tk_reorder <- group_tk %>% 
+  mutate(monitoring_status=fct_relevel(monitoring_status, "PreBurn", "PostBurnYear1", "PostBurnYear2")) %>%
+  arrange(monitoring_status)# Arranges the data frame by this variable
+  
+kable(group_tk_reorder, format = "markdown", col.names = c("Monitoring Status", "Treatment", "Experiment", "Alive", "Dead", "Topkill"), align = "llcccc", digits = 3,caption = "Number of Alive, Dead and Topkill QUKEs by burn treatment")
+
+```
+
