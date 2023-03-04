@@ -1,0 +1,268 @@
+,macro_plot_name,monitoring_status,date,size_cl_dia,status,avg_ht,comment,tag_no,top_kill_y_n,resprout_y_n,epicormic_resprout_y_n,basal_resprout_y_n,basal_resprout_height_cm,basal_resprout_width_cm,basal_resprout_count,uv2,uv3,uv1desc,uv2desc,uv3desc,sa_comment,species_symbol,treatment_burn,experiment
+456,_170,PostBurnYear1,8/25/2022,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,D. to plant,D. to CWD,neighbor,NA,leafout_burn,new
+457,_170,PostBurnYear1,8/25/2022,2.5,D,3.9,NA,971,Y,N,N,Y,70.5,15,4,NA,NA,NA,NA,NA,NA,QUKE,leafout_burn,new
+458,_170,PostBurnYear1,8/25/2022,5.1,L,4.22,NA,972,N,N,Y,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,leafout_burn,new
+459,_170,PostBurnYear1,8/25/2022,3.7,D,3.8,NA,973,Y,N,N,Y,45.5,75,19,NA,NA,NA,NA,NA,NA,QUKE,leafout_burn,new
+460,_170,PostBurnYear1,8/25/2022,2.45,D,3.5,NA,974,Y,N,N,Y,52,78,23,NA,NA,NA,NA,NA,NA,QUKE,leafout_burn,new
+461,_171,PostBurnYear1,8/26/2022,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,NA,NA,NA,NA,leafout_burn,new
+462,_171,PostBurnYear1,8/26/2022,8.05,L,6.1,NA,54,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,leafout_burn,new
+463,_171,PostBurnYear1,8/26/2022,4.3,L,4,NA,55,N,Y,N,Y,15,8,2,NA,NA,NA,NA,NA,NA,QUKE,leafout_burn,new
+464,_171,PostBurnYear1,8/26/2022,6.95,L,3,NA,57,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,PIJE,leafout_burn,new
+465,_171,PostBurnYear1,8/26/2022,4.3,D,2.3,NA,58,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,PIJE,leafout_burn,new
+466,_171,PostBurnYear1,8/26/2022,0.85,L,1.45,NA,63,N,N,Y,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,leafout_burn,new
+467,_172,PostBurnYear1,8/25/2022,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,NA,NA,NA,NA,leafout_burn,new
+468,_172,PostBurnYear1,8/25/2022,3.95,L,2.1,Resprout from dead Tree #124,124,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,leafout_burn,new
+469,_172,PostBurnYear1,8/25/2022,0.74,D,1.6,NA,121,Y,N,N,Y,24,22.5,6,NA,NA,NA,NA,NA,NA,QUKE,leafout_burn,new
+470,_173,PostBurnYear1,8/25/2022,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,NA,NA,NA,NA,leafout_burn,new
+471,_173,PostBurnYear1,8/25/2022,4.45,D,2.13,NA,24,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,PIJE,leafout_burn,new
+472,_173,PostBurnYear1,8/25/2022,2.9,D,2.4,NA,38,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,PIJE,leafout_burn,new
+473,_175,PostBurnYear1,8/25/2022,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,NA,NA,NA,NA,leafout_burn,new
+474,_175,PostBurnYear1,8/25/2022,6.45,L,4,NA,43,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,leafout_burn,new
+475,_175,PostBurnYear1,8/25/2022,5.5,L,4.1,NA,44,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,leafout_burn,new
+476,_176,PostBurnYear1,8/25/2022,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,NA,NA,NA,NA,dormant_burn,new
+477,_176,PostBurnYear1,8/25/2022,0.6,D,1.6,NA,78,Y,Y,N,Y,107,105,9,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+478,_176,PostBurnYear1,8/25/2022,7.55,L,4.3,NA,82,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+479,_177,PostBurnYear1,8/25/2022,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,NA,NA,NA,NA,dormant_burn,new
+480,_177,PostBurnYear1,8/25/2022,6.55,L,4.9,NA,87,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+481,_177,PostBurnYear1,8/25/2022,0.65,D,1.5,NA,88,Y,Y,N,Y,95,91,31,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+482,_177,PostBurnYear1,8/25/2022,1.8,L,2.3,NA,89,N,Y,N,Y,73,34,2,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+483,_179,PostBurnYear1,8/25/2022,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,NA,NA,NA,NA,dormant_burn,new
+484,_179,PostBurnYear1,8/25/2022,4.15,D,3.8,NA,64,Y,Y,N,Y,145,210,12,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+485,_179,PostBurnYear1,8/25/2022,5.4,L,2.7,NA,69,N,N,N,Y,75,60,7,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+486,_179,PostBurnYear1,8/25/2022,1.4,L,1.5,NA,70,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,PIJE,dormant_burn,new
+487,_179,PostBurnYear1,8/25/2022,3.5,L,2.1,NA,71,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,PIJE,dormant_burn,new
+488,_179,PostBurnYear1,8/25/2022,1.3,L,1.5,NA,73,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+489,_179,PostBurnYear1,8/25/2022,6.4,L,4.35,NA,75,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+490,_180,PostBurnYear1,8/25/2022,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,NA,NA,NA,NA,dormant_burn,new
+491,_180,PostBurnYear1,8/25/2022,3.85,L,3.3,NA,1,N,Y,Y,Y,89,80,16,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+492,_180,PostBurnYear1,8/25/2022,2.35,L,3.4,NA,5,N,Y,Y,Y,40,41,4,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+493,_180,PostBurnYear1,8/25/2022,0.9,D,1.45,NA,10,Y,Y,N,Y,75,60,3,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+494,_180,PostBurnYear1,8/25/2022,0,D,NA,Main stem broke.,22,Y,Y,N,Y,41,52,16,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+495,_181,PostBurnYear1,8/25/2022,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,NA,NA,NA,NA,dormant_burn,new
+496,_181,PostBurnYear1,8/25/2022,1.45,L,1.5,NA,97,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,PIJE,dormant_burn,new
+497,_181,PostBurnYear1,8/25/2022,0.7,L,1.49,NA,102,N,Y,N,Y,11,9,1,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+498,_195,PostBurnYear1,8/25/2022,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,NA,NA,NA,NA,dormant_burn,new
+499,_195,PostBurnYear1,8/25/2022,2.2,D,2.4,NA,128,Y,Y,N,Y,132,159,24,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+500,_195,PostBurnYear1,8/25/2022,1.2,D,2,NA,129,Y,Y,N,Y,89,110,12,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+501,_195,PostBurnYear1,8/25/2022,4.9,L,4,NA,130,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+502,_195,PostBurnYear1,8/25/2022,0,D,NA,Crushed no longer meets DBH.,139,Y,Y,N,Y,85,80,11,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+503,_195,PostBurnYear1,8/25/2022,7.1,L,4.5,NA,148,N,Y,Y,Y,87,55,2,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+504,_195,PostBurnYear1,8/25/2022,7.45,L,4.2,NA,152,N,Y,N,Y,55,20,9,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+505,_195,PostBurnYear1,8/25/2022,0.5,D,1.5,NA,154,Y,Y,N,Y,60,70,30,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+506,_195,PostBurnYear1,8/25/2022,0,D,NA,NA,155,Y,Y,N,Y,55,68,11,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+507,_195,PostBurnYear1,8/25/2022,1.15,D,2,NA,157,Y,Y,N,Y,64,95.5,11,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+508,_195,PostBurnYear1,8/25/2022,1.2,D,2.1,NA,158,Y,Y,N,Y,44,82,21,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+509,_195,PostBurnYear1,8/25/2022,1.3,D,2.2,NA,160,Y,Y,N,Y,92,93,21,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+510,_195,PostBurnYear1,8/25/2022,4.95,L,2.5,Got shorter bc tree fell on it.,161,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+511,_195,PostBurnYear1,8/25/2022,0.8,D,2,NA,164,Y,Y,N,Y,113,119,13,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+512,_196,PostBurnYear1,8/25/2022,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,NA,NA,NA,NA,dormant_burn,new
+513,_196,PostBurnYear1,8/25/2022,3.65,L,3.8,NA,169,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+514,_196,PostBurnYear1,8/25/2022,2,L,2,NA,170,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+515,_197,PostBurnYear1,8/25/2022,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,NA,NA,NA,NA,dormant_burn,new
+516,_197,PostBurnYear1,8/25/2022,5.3,L,3.2,NA,176,NA,Y,Y,Y,81,100,16,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+517,_197,PostBurnYear1,8/25/2022,2.5,L,2.3,NA,177,NA,Y,N,Y,58,65,7,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+518,_197,PostBurnYear1,8/25/2022,0.85,D,1.5,NA,178,NA,Y,N,Y,76,57,9,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+519,_197,PostBurnYear1,8/25/2022,0.4,D,1.45,NA,179,NA,Y,N,Y,90,70,3,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+520,_197,PostBurnYear1,8/25/2022,0.55,D,1.45,NA,180,NA,Y,N,Y,103,110,13,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+521,_197,PostBurnYear1,8/25/2022,4.55,L,3.3,NA,181,NA,N,N,Y,31,26,3,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+522,_197,PostBurnYear1,8/25/2022,1.6,L,1.6,NA,182,NA,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+523,_197,PostBurnYear1,8/25/2022,1,D,1.8,NA,188,NA,Y,N,Y,98,60,23,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+524,_198,PostBurnYear1,8/25/2022,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,NA,NA,NA,NA,leafout_burn,new
+525,_198,PostBurnYear1,8/25/2022,0,D,NA,Crushed by fallen tree. Does not meet DBH or have a height.,191,Y,Y,N,Y,47.5,36,2,NA,NA,NA,NA,NA,NA,QUKE,leafout_burn,new
+526,_198,PostBurnYear1,8/25/2022,2.65,D,3.5,NA,196,Y,Y,N,Y,53,84,15,NA,NA,NA,NA,NA,NA,QUKE,leafout_burn,new
+527,_198,PostBurnYear1,8/25/2022,0.5,D,1.45,NA,198,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,leafout_burn,new
+528,_199,PostBurnYear1,8/25/2022,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,NA,NA,NA,NA,leafout_burn,new
+529,_199,PostBurnYear1,8/25/2022,0.5,D,1.6,NA,219,Y,N,N,Y,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,leafout_burn,new
+530,_199,PostBurnYear1,8/25/2022,7.1,D,4.4,NA,225,Y,Y,N,Y,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,leafout_burn,new
+531,_200,PostBurnYear1,8/25/2022,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,NA,NA,NA,NA,leafout_burn,new
+532,_200,PostBurnYear1,8/25/2022,3.2,L,3.1,Hard to tell if Epicormic resprouting or some of the camopy is still alive.,200,N,N,Y,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,leafout_burn,new
+533,_200,PostBurnYear1,8/25/2022,4,D,2.4,NA,201,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,leafout_burn,new
+534,_170,PreBurn,8/28/2021,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,D. to plant,D. to CWD,neighbor,NA,leafout_burn,new
+535,_170,PreBurn,8/28/2021,2.4,L,3.95,SYMO-SL,971,NA,NA,NA,NA,NA,NA,NA,0,1,NA,NA,NA,NA,QUKE,leafout_burn,new
+536,_170,PreBurn,8/28/2021,4.6,L,4.2,SYMO-SL,972,NA,NA,NA,NA,NA,NA,NA,0,1.5,NA,NA,NA,NA,QUKE,leafout_burn,new
+537,_170,PreBurn,8/28/2021,3.7,L,3.8,SYMO-SL,973,NA,NA,NA,NA,NA,NA,NA,0,2.2,NA,NA,NA,NA,QUKE,leafout_burn,new
+538,_170,PreBurn,8/28/2021,2.45,L,3.5,SYMO-SL,974,NA,NA,NA,NA,NA,NA,NA,0,3.2,NA,NA,NA,NA,QUKE,leafout_burn,new
+539,_171,PreBurn,8/28/2021,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,NA,NA,NA,NA,leafout_burn,new
+540,_171,PreBurn,8/28/2021,7.3,L,6,NA,54,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,leafout_burn,new
+541,_171,PreBurn,8/28/2021,4,L,3.95,NA,55,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,leafout_burn,new
+542,_171,PreBurn,8/28/2021,6.95,L,3,NA,57,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,PIJE,leafout_burn,new
+543,_171,PreBurn,8/28/2021,4.2,L,2.5,NA,58,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,PIJE,leafout_burn,new
+544,_171,PreBurn,8/28/2021,0.15,L,1.45,NA,63,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,leafout_burn,new
+545,_172,PreBurn,8/28/2021,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,NA,NA,NA,NA,leafout_burn,new
+546,_172,PreBurn,8/28/2021,0.75,L,1.7,NA,121,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,leafout_burn,new
+547,_173,PreBurn,8/28/2021,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,NA,NA,NA,NA,leafout_burn,new
+548,_173,PreBurn,8/28/2021,4.4,L,2.2,NA,24,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,PIJE,leafout_burn,new
+549,_173,PreBurn,8/28/2021,3,L,2.4,NA,38,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,PIJE,leafout_burn,new
+550,_175,PreBurn,8/28/2021,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,NA,NA,NA,NA,leafout_burn,new
+551,_175,PreBurn,8/28/2021,5.5,L,3.95,NA,43,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,leafout_burn,new
+552,_175,PreBurn,8/28/2021,4.9,L,3.9,NA,44,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,leafout_burn,new
+553,_176,PreBurn,8/28/2021,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,NA,NA,NA,NA,dormant_burn,new
+554,_176,PreBurn,8/28/2021,0.6,L,1.7,NA,78,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+555,_176,PreBurn,8/28/2021,7.05,L,4.2,NA,82,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+556,_177,PreBurn,8/28/2021,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,NA,NA,NA,NA,dormant_burn,new
+557,_177,PreBurn,8/28/2021,6.1,L,4.5,NA,87,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+558,_177,PreBurn,8/28/2021,0.55,L,1.6,NA,88,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+559,_177,PreBurn,8/28/2021,1.6,L,2.2,NA,89,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+560,_179,PreBurn,8/28/2021,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,NA,NA,NA,NA,dormant_burn,new
+561,_179,PreBurn,8/28/2021,4.35,L,3.9,NA,64,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+562,_179,PreBurn,8/28/2021,4.85,L,2.7,NA,69,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+563,_179,PreBurn,8/28/2021,1.3,L,1.45,NA,70,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,PIJE,dormant_burn,new
+564,_179,PreBurn,8/28/2021,2.95,L,2,NA,71,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,PIJE,dormant_burn,new
+565,_179,PreBurn,8/28/2021,0.7,L,1.5,NA,73,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+566,_179,PreBurn,8/28/2021,5.75,L,4.3,NA,75,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+567,_180,PreBurn,8/28/2021,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,NA,NA,NA,NA,dormant_burn,new
+568,_180,PreBurn,8/28/2021,3.7,L,3.2,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+569,_180,PreBurn,8/28/2021,2.1,L,3.4,NA,5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+570,_180,PreBurn,8/28/2021,1.1,L,1.8,NA,10,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+571,_180,PreBurn,8/28/2021,0.75,L,1.8,NA,22,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+572,_181,PreBurn,8/28/2021,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,NA,NA,NA,NA,dormant_burn,new
+573,_181,PreBurn,8/28/2021,1.2,L,1.4,NA,97,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,PIJE,dormant_burn,new
+574,_181,PreBurn,8/28/2021,0.4,L,1.5,NA,102,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+575,_195,PreBurn,8/28/2021,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,NA,NA,NA,NA,dormant_burn,new
+576,_195,PreBurn,8/28/2021,2.4,L,3.2,NA,128,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+577,_195,PreBurn,8/28/2021,1.3,L,2.1,NA,129,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+578,_195,PreBurn,8/28/2021,4.3,L,4.2,NA,130,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+579,_195,PreBurn,8/28/2021,0.35,L,1.6,NA,139,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+580,_195,PreBurn,8/28/2021,6.9,L,4.5,NA,148,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+581,_195,PreBurn,8/28/2021,6.8,L,4.1,NA,152,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+582,_195,PreBurn,8/28/2021,0.8,L,1.8,NA,154,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+583,_195,PreBurn,8/28/2021,0.25,L,1.5,NA,155,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+584,_195,PreBurn,8/28/2021,1.4,L,2,NA,157,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+585,_195,PreBurn,8/28/2021,1.4,L,2.2,NA,158,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+586,_195,PreBurn,8/28/2021,1.4,L,2.2,NA,160,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+587,_195,PreBurn,8/28/2021,4.3,L,4,NA,161,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+588,_195,PreBurn,8/28/2021,1,L,2.2,NA,164,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+589,_196,PreBurn,8/28/2021,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,NA,NA,NA,NA,dormant_burn,new
+590,_196,PreBurn,8/28/2021,3.45,L,3.4,NA,169,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+591,_196,PreBurn,8/28/2021,1.35,L,2,NA,170,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+592,_197,PreBurn,8/28/2021,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,NA,NA,NA,NA,dormant_burn,new
+593,_197,PreBurn,8/28/2021,5,L,4.2,NA,176,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+594,_197,PreBurn,8/28/2021,2.2,L,2.5,NA,177,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+595,_197,PreBurn,8/28/2021,0.6,L,1.6,NA,178,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+596,_197,PreBurn,8/28/2021,0.25,L,1.4,NA,179,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+597,_197,PreBurn,8/28/2021,2,L,1.4,NA,180,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+598,_197,PreBurn,8/28/2021,3.95,L,3.7,NA,181,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+599,_197,PreBurn,8/28/2021,0.9,L,1.7,NA,182,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+600,_197,PreBurn,8/28/2021,1.15,L,2,NA,188,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,dormant_burn,new
+601,_198,PreBurn,8/28/2021,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,NA,NA,NA,NA,leafout_burn,new
+602,_198,PreBurn,8/28/2021,0.85,L,1.8,NA,191,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,leafout_burn,new
+603,_198,PreBurn,8/28/2021,2.9,L,3.5,NA,196,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,leafout_burn,new
+604,_198,PreBurn,8/28/2021,0.6,D,1.5,NA,198,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,leafout_burn,new
+605,_199,PreBurn,8/28/2021,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,NA,NA,NA,NA,leafout_burn,new
+606,_199,PreBurn,8/28/2021,0.4,L,1.5,NA,219,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,leafout_burn,new
+607,_199,PreBurn,8/28/2021,7,L,4.4,NA,225,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,leafout_burn,new
+608,_200,PreBurn,8/28/2021,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,NA,NA,NA,NA,leafout_burn,new
+609,_200,PreBurn,8/28/2021,3,L,3.1,NA,200,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,leafout_burn,new
+610,_200,PreBurn,8/28/2021,4,L,2.4,NA,201,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,leafout_burn,new
+637,_190,PostBurnYear1,9/26/2022 11:06,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,NA,NA,NA,NA,control,new
+638,_190,PostBurnYear1,9/26/2022 11:06,1.8,L,2.1,NA,233,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+639,_190,PostBurnYear1,9/26/2022 11:06,7.2,L,4.1,NA,234,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+640,_190,PostBurnYear1,9/26/2022 11:06,3.6,L,3.2,NA,235,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+641,_190,PostBurnYear1,9/26/2022 11:06,2.4,L,2.4,NA,237,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+642,_190,PostBurnYear1,9/26/2022 11:06,1.95,L,2.2,NA,239,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+643,_191,PostBurnYear1,9/26/2022 11:07,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,NA,NA,NA,NA,control,new
+644,_191,PostBurnYear1,9/26/2022 11:07,2.3,L,2.4,NA,248,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+645,_191,PostBurnYear1,9/26/2022 11:07,7.6,L,4.2,NA,249,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+646,_191,PostBurnYear1,9/26/2022 11:07,8.05,L,5.3,NA,250,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+701,_190,PreBurn,8/28/2021 12:20,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,NA,NA,NA,NA,control,new
+702,_190,PreBurn,8/28/2021 12:20,1.1,L,2,NA,233,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+703,_190,PreBurn,8/28/2021 12:20,6.6,L,4.1,NA,234,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+704,_190,PreBurn,8/28/2021 12:20,3,L,3.1,NA,235,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+705,_190,PreBurn,8/28/2021 12:20,2,L,2.4,NA,237,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+706,_190,PreBurn,8/28/2021 12:20,1.6,L,2.2,NA,239,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+707,_191,PreBurn,8/28/2021 12:20,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,NA,NA,NA,NA,control,new
+708,_191,PreBurn,8/28/2021 12:20,2,L,2.4,NA,248,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+709,_191,PreBurn,8/28/2021 12:20,6.9,L,4.2,NA,249,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+710,_191,PreBurn,8/28/2021 12:20,7.4,L,5.2,NA,250,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+324,_150,PreBurn,8/30/2021 14:14,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,D. to Plant,D. to CWD,neighbor,NA,control,new
+325,_150,PreBurn,8/30/2021 14:14,6.6,L,4.2,NA,824,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+326,_150,PreBurn,8/30/2021 14:14,0.55,L,1.7,NA,825,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+327,_150,PreBurn,8/30/2021 14:14,1.9,L,2.5,NA,826,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+328,_150,PreBurn,8/30/2021 14:14,1.2,L,1.8,NA,827,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+329,_150,PreBurn,8/30/2021 14:14,0.6,L,1.6,NA,828,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+330,_150,PreBurn,8/30/2021 14:14,1.6,L,2.3,NA,829,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+331,_150,PreBurn,8/30/2021 14:14,3.4,L,3,NA,830,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+332,_150,PreBurn,8/30/2021 14:14,5.6,L,4.1,NA,831,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+333,_150,PreBurn,8/30/2021 14:14,3.1,L,3.6,NA,832,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+334,_150,PreBurn,8/30/2021 14:14,3.6,L,2.9,NA,833,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+335,_150,PreBurn,8/30/2021 14:14,6.35,L,3.9,NA,834,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+336,_150,PreBurn,8/30/2021 14:14,7.6,L,4.4,NA,835,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+337,_150,PreBurn,8/30/2021 14:14,3.1,L,3.85,NA,836,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+338,_150,PreBurn,8/30/2021 14:14,0.8,L,1.8,NA,839,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+339,_150,PreBurn,8/30/2021 14:14,0.55,L,1.5,NA,841,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+340,_150,PreBurn,8/30/2021 14:14,1.6,L,2.2,NA,844,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+341,_150,PreBurn,8/30/2021 14:14,3.5,L,3,NA,845,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+342,_150,PreBurn,8/30/2021 14:14,2,L,2.85,NA,846,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+611,_152,PreBurn,8/30/2021 14:15,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,D. to plant,D. to CWD,neighbor,NA,control,new
+612,_152,PreBurn,8/30/2021 14:15,3.1,L,2.4,NA,202,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+613,_153,PreBurn,8/30/2021 14:16,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,D. to plant,D. to CWD,neighbor,NA,control,new
+614,_153,PreBurn,8/30/2021 14:16,7.4,L,4.1,NA,172,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+615,_153,PreBurn,8/30/2021 14:16,6.85,L,4.5,NA,173,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+616,_156,PreBurn,8/30/2021 14:17,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,D. to Plant,D. to CWD,neighbor,NA,control,new
+617,_156,PreBurn,8/30/2021 14:17,3.6,L,3,NA,164,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+618,_157,PreBurn,8/30/2021 14:17,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Tag #,D. to Plant,D. to CWD,neighbor,NA,control,new
+619,_157,PreBurn,8/30/2021 14:17,1.5,L,2.3,NA,143,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+620,_157,PreBurn,8/30/2021 14:17,2.05,L,2.3,NA,144,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+621,_157,PreBurn,8/30/2021 14:17,2.85,L,3,NA,145,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+622,_157,PreBurn,8/30/2021 14:17,4.8,L,4.5,NA,149,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+623,_157,PreBurn,8/30/2021 14:17,4.65,L,4,NA,150,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+624,_158,PreBurn,8/30/2021 14:18,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Tag #,D. to Plant,D. to CWD,neighbor,NA,control,new
+625,_158,PreBurn,8/30/2021 14:18,7.2,L,3,NA,111,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,PIJE,control,new
+626,_158,PreBurn,8/30/2021 14:18,4.2,Ll,2,NA,112,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,PIJE,control,new
+627,_158,PreBurn,8/30/2021 14:18,5.65,L,3.2,NA,115,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,PIJE,control,new
+628,_158,PreBurn,8/30/2021 14:18,2.9,L,2.1,NA,122,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,PIJE,control,new
+629,_158,PreBurn,8/30/2021 14:18,6.3,L,5,NA,125,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+630,_158,PreBurn,8/30/2021 14:18,3.2,L,2.2,NA,126,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+631,_158,PreBurn,8/30/2021 14:18,3.5,L,2.4,NA,128,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+632,_158,PreBurn,8/30/2021 14:18,1.4,L,2.1,NA,129,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+633,_158,PreBurn,8/30/2021 14:18,4.9,L,4.3,NA,130,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+634,_158,PreBurn,8/30/2021 14:18,0.5,L,1.6,NA,132,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+635,_158,PreBurn,8/30/2021 14:18,1.55,L,2.1,NA,137,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+636,_158,PreBurn,8/30/2021 14:18,5.15,L,2.2,NA,136,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,PIJE,control,new
+378,_150,PostBurnYear1,9/26/2022 11:01,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,D. to Plant,D. to CWD,neighbor,NA,control,new
+379,_150,PostBurnYear1,9/26/2022 11:01,6.95,L,4.2,NA,824,NA,Y,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+380,_150,PostBurnYear1,9/26/2022 11:01,0.7,L,1.45,NA,825,NA,Y,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+381,_150,PostBurnYear1,9/26/2022 11:01,2.1,L,1.8,NA,826,NA,Y,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+382,_150,PostBurnYear1,9/26/2022 11:01,1.4,L,1.9,NA,827,NA,Y,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+383,_150,PostBurnYear1,9/26/2022 11:01,0.55,L,1.45,NA,828,NA,Y,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+384,_150,PostBurnYear1,9/26/2022 11:01,1.7,L,2.3,NA,829,NA,Y,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+385,_150,PostBurnYear1,9/26/2022 11:01,3.9,L,3,NA,830,NA,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+386,_150,PostBurnYear1,9/26/2022 11:01,6.2,L,4.1,NA,831,NA,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+387,_150,PostBurnYear1,9/26/2022 11:01,3.25,L,3.6,NA,832,NA,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+388,_150,PostBurnYear1,9/26/2022 11:01,4.1,L,3,NA,833,NA,Y,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+389,_150,PostBurnYear1,9/26/2022 11:01,5.6,L,4,NA,834,NA,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+390,_150,PostBurnYear1,9/26/2022 11:01,8.15,L,4.5,NA,835,NA,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+391,_150,PostBurnYear1,9/26/2022 11:01,3.3,L,3.8,NA,836,NA,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+392,_150,PostBurnYear1,9/26/2022 11:01,0.85,L,1.8,NA,839,NA,Y,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+393,_150,PostBurnYear1,9/26/2022 11:01,0.7,L,1.5,NA,841,NA,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+394,_150,PostBurnYear1,9/26/2022 11:01,2.1,L,2.3,NA,844,NA,Y,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+395,_150,PostBurnYear1,9/26/2022 11:01,3.6,L,3,NA,845,NA,Y,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+396,_150,PostBurnYear1,9/26/2022 11:01,2.4,L,2.9,NA,846,NA,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+647,_152,PostBurnYear1,9/26/2022 11:02,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,D. to plant,D. to CWD,neighbor,NA,control,new
+648,_152,PostBurnYear1,9/26/2022 11:02,3.8,L,2.5,NA,202,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+649,_153,PostBurnYear1,9/26/2022 11:03,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,D. to plant,D. to CWD,neighbor,NA,control,new
+650,_153,PostBurnYear1,9/26/2022 11:03,8.4,L,4.3,NA,172,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+651,_153,PostBurnYear1,9/26/2022 11:03,7.7,L,5.2,NA,173,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+652,_156,PostBurnYear1,9/26/2022 11:04,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,tag,D. to Plant,D. to CWD,neighbor,NA,control,new
+653,_156,PostBurnYear1,9/26/2022 11:04,4,L,3,NA,164,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+654,_157,PostBurnYear1,9/26/2022 11:05,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Tag #,D. to Plant,D. to CWD,neighbor,NA,control,new
+655,_157,PostBurnYear1,9/26/2022 11:05,2,L,2.3,NA,143,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+656,_157,PostBurnYear1,9/26/2022 11:05,2.7,L,2.6,NA,144,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+657,_157,PostBurnYear1,9/26/2022 11:05,3.3,L,3.2,NA,145,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+658,_157,PostBurnYear1,9/26/2022 11:05,5.6,L,4.6,NA,149,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+659,_157,PostBurnYear1,9/26/2022 11:05,5.8,L,4.3,NA,150,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+660,_157,PostBurnYear1,9/26/2022 11:05,1.95,L,2.2,Resprout out of dead tree 146.,146,N,Y,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+661,_157,PostBurnYear1,9/26/2022 11:05,0.75,L,1.43,No tag; maybe a sapling that was missed the previous years.,NA,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+662,_158,PostBurnYear1,9/26/2022 11:05,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,Tag #,D. to Plant,D. to CWD,neighbor,NA,control,new
+663,_158,PostBurnYear1,9/26/2022 11:05,7.4,L,2.8,NA,111,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,PIJE,control,new
+664,_158,PostBurnYear1,9/26/2022 11:05,4.2,L,1.7,NA,112,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,PIJE,control,new
+665,_158,PostBurnYear1,9/26/2022 11:05,5.8,D,2.6,NA,115,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,PIJE,control,new
+666,_158,PostBurnYear1,9/26/2022 11:05,3.85,L,2,NA,122,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,PIJE,control,new
+667,_158,PostBurnYear1,9/26/2022 11:05,7.1,L,5.1,NA,125,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+668,_158,PostBurnYear1,9/26/2022 11:05,3.45,L,2.1,NA,126,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+669,_158,PostBurnYear1,9/26/2022 11:05,4,L,2.2,NA,128,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+670,_158,PostBurnYear1,9/26/2022 11:05,1.45,L,1.85,NA,129,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+671,_158,PostBurnYear1,9/26/2022 11:05,5.45,L,4.2,NA,130,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+672,_158,PostBurnYear1,9/26/2022 11:05,1,L,1.6,NA,132,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+673,_158,PostBurnYear1,9/26/2022 11:05,1.9,L,1.8,NA,137,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,QUKE,control,new
+674,_158,PostBurnYear1,9/26/2022 11:05,5.2,L,2,NA,136,N,N,N,N,NA,NA,NA,NA,NA,NA,NA,NA,NA,PIJE,control,new

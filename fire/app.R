@@ -1,24 +1,32 @@
 library(tidyverse)
 library(shiny)
 library(shinythemes)
+library(shinyWidgets)
+# source("/helpers.R")
+trees_old <- read_csv("data/Laguna_TreesRaw_Master/plot_status_no_dead.csv")
+
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(theme = shinytheme("superhero"),
 
+    # # Application title
+    # titlePanel("Prescribed Fire Timing On Mt. Laguna"),
     # Application title
-    titlePanel("Prescribed Fire Timing On Mt. Laguna"),
+    titlePanel(title = div(span(img(src = "flame.png",width= "50px",height= "50px")
+                                ,
+                     "Prescribed Fire Timing on Mt. Laguna"))),
 
         # Tabs of our different widgets
           tabsetPanel(type = "tabs",
-                      tabPanel("Prescribed Fire", tags$video(src="fire_timelapse.MOV",width= "300px", type="video/mp4", controls="controls")),
+                      tabPanel("What is Prescribed Fire?", tags$video(src="fire_timelapse.MOV",width= "300px", type="video/mp4", controls="controls")),
                       tabPanel("Study Site"),
-                      tabPanel("Trees",
+                       tabPanel("Trees",
                                sidebarLayout(
-                                 sidebarPanel(radioButtons(inputId = 'penguin_species',
+                                 sidebarPanel(radioButtons(inputId = 'stage',
                                                            label = "Choose Black Oak Life-stage",
-                                                           choices = c("Adult", "Sapling", "Seedling"))),
+                                                           choices = c("Adult", "Sapling"))),
                                  mainPanel(
-                                   htmlOutput("distPlot")
+                                   plotOutput("distPlot")
                                  )
                                )
                                ),
@@ -31,14 +39,24 @@ ui <- fluidPage(theme = shinytheme("superhero"),
 server <- function(input, output) {
 
     output$distPlot <- renderPlot({
-        # generate bins based on input$bins from ui.R
-        x    <- faithful[, 2]
-        bins <- seq(min(x), max(x), length.out = input$bins + 1)
-
-        # draw the histogram with the specified number of bins
-        hist(x, breaks = bins, col = 'darkgray', border = 'white',
-             xlab = 'Waiting time to next eruption (in mins)',
-             main = 'Histogram of waiting times')
+      input$choices %>% 
+      ggplot(data = plot_status_no_dead, aes(fill = status, x = treatment_burn, y = count))+
+        geom_bar(stat= "identity", 
+                 position= "stack",
+                 color="black")+
+        scale_fill_manual(values = c('chocolate', 'darkgreen', 'green'))+
+        # geom_text(aes(y = 30,label= treatment_burn),
+        #           position = position_dodge(width = .9),
+        #           angle = 90,
+        #          fontface= "bold")+
+        facet_wrap(~monitoring_status)+
+        ylab('Number of Trees') + 
+        xlab('Treatment')+
+        ggtitle("Adult Quercus kelloggii- Old Exp.")+
+        theme_classic()+
+        theme(axis.text.x = element_text(size =9, angle = 25, hjust =1))
+      
+        
     })
 }
 

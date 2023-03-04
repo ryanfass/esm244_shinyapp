@@ -1,0 +1,196 @@
+---
+title: "TreesMeta_Old_New_Separate"
+author: "Ryan Fass"
+date: "2023-01-18"
+output: html_document
+---
+### Laguna Mountain: Tables of Alive, Dead and Topkill Adult QUKEs and Bar Graphs. Old Experiment and New Experiment separate. 
+
+
+
+TreesMeta_Old_New_Separate means: same as tree data, where I separated the old and new experiments into two different csv’s so that processing is a little more streamline. I separated the TreesMeta_data in Excel. For Old Experiment: I deleted all of the New Experiment plots and the two extra controls (190 & 191), using Sort in excel. For New Experiment: I only added Old Experiment Control plots (PostBurnYear1 and changed to PreBurn) and (PostBurnYear2 and changed to PostBurnYear1) This change in monitoring_status was to mimic the year of survey for the New Experiment.
+
+```{r setup, include=FALSE, warning=FALSE, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(here)
+library(janitor)
+library(knitr)
+library(dplyr)
+library(patchwork)
+```
+
+
+Read in the two tree csv's (old and new) 
+```{r}
+trees_all_old_data <- read_csv(here('trees_all_old_data.csv'))
+trees_all_new_data <- read_csv(here('trees_all_new_data.csv'))
+```
+
+
+Take both the trees old experiment data and the tree new experiment data and select just the QUKE species.Then change the status_x values (L = live and D = dead). Create a new column call final_status that has values = alive, dead, topkill. 
+```{r}
+trees_tk_status_old <- trees_all_old_data %>%
+  select(macro_plot_name, monitoring_status, status_x, species_symbol,  treatment_burn,  experiment, top_kill_y_n) %>%
+  filter(species_symbol %in% c("QUKE")) %>%
+  mutate(live = status_x == "L") %>%
+  mutate(dead = status_x == "D",
+         final_status = case_when(live == TRUE ~ "alive",
+                                  dead == TRUE & top_kill_y_n == "N" ~ "dead",
+                                  dead == TRUE & top_kill_y_n == "Y" ~ "topkill",
+                                  dead == TRUE & is.na(top_kill_y_n) == TRUE ~ "dead"))
+
+trees_tk_status_new <- trees_all_new_data %>%
+  select(macro_plot_name, monitoring_status, status_x, species_symbol,  treatment_burn,  experiment, top_kill_y_n) %>%
+  filter(species_symbol %in% c("QUKE")) %>%
+  mutate(live = status_x == "L") %>%
+  mutate(dead = status_x == "D",
+         final_status = case_when(live == TRUE ~ "alive",
+                                  dead == TRUE & top_kill_y_n == "N" ~ "dead",
+                                  dead == TRUE & top_kill_y_n == "Y" ~ "topkill",
+                                  dead == TRUE & is.na(top_kill_y_n) == TRUE ~ "dead"))
+```
+
+
+
+For the Old and New experiments, I created a data frame that has the columns that I want to show in the table (using group_by) and then used the summarise fuction to count the Alive, Dead and Topkill in the final status.
+```{r}
+group_tk_old = trees_tk_status_old %>% 
+  group_by(monitoring_status, treatment_burn, experiment) %>%  
+  summarise(live = sum(final_status== "alive"),
+            dead = sum(final_status== "dead"),
+            topkill = sum(final_status== "topkill")) %>% 
+ mutate(monitoring_status = as.factor(monitoring_status))
+```
+
+Reordering the data frame so that the monitoring_status reads logically. Then using ‘kable’ to create the tables.
+```{r}
+group_tk_old_reorder <- group_tk_old %>% 
+  mutate(monitoring_status=fct_relevel(monitoring_status, "PreBurn", "PostBurnYear1", "PostBurnYear2")) %>%
+  arrange(monitoring_status)# Arranges the data frame by this variable
+  
+kable(group_tk_old_reorder, format = "markdown", col.names = c("Monitoring Status", "Treatment", "Experiment", "Alive", "Dead", "Topkill"), align = "llcccc", digits = 3,caption = "Number of Alive, Dead and Topkill Adult QUKEs by burn treatment")
+
+
+write.csv(group_tk_old_reorder, here("group_tk_old_reorder.csv"))
+```
+
+```{r}
+group_tk_new = trees_tk_status_new %>% 
+  group_by(monitoring_status, treatment_burn, experiment) %>%  
+  summarise(live = sum(final_status== "alive"),
+            dead = sum(final_status== "dead"),
+            topkill = sum(final_status== "topkill")) %>% 
+ mutate(monitoring_status = as.factor(monitoring_status))
+```
+
+```{r, warning=FALSE}
+group_tk_new_reorder <- group_tk_new %>% 
+  mutate(monitoring_status=fct_relevel(monitoring_status, "PreBurn", "PostBurnYear1", "PostBurnYear2")) %>%
+  arrange(monitoring_status)# Arranges the data frame by this variable
+  
+kable(group_tk_new_reorder, format = "markdown", col.names = c("Monitoring Status", "Treatment", "Experiment", "Alive", "Dead", "Topkill"), align = "llcccc", digits = 3,caption = "Number of Alive, Dead and Topkill Adult QUKEs by burn treatment") 
+
+```
+
+```{r}
+
+plot_tk_status_new <- group_tk_new_reorder %>%
+  pivot_longer(cols = c('live', 'dead', 'topkill'), 
+               names_to = 'status',
+               values_to = 'count')
+
+
+ggplot(data = plot_tk_status_new, aes(fill = status, x = treatment_burn, y = count))+
+  geom_bar(stat= "identity", 
+           position= "stack",
+           color="black")+
+  scale_fill_manual(values = c('chocolate', 'darkgreen', 'green'))+
+ # geom_text(aes(y = 42,label= treatment_burn),
+#            position = position_dodge(width = .9),
+ #           angle = 90,
+ #           fontface= "bold")+
+  facet_wrap(~monitoring_status)+
+  ylab('Number of Trees') +
+   xlab('Treatment')+
+  ggtitle("New Experiment- Adult Quercus kelloggii ")+
+  theme_classic()+
+  theme(axis.text.x = element_text(size =9, angle = 25, hjust =1))
+```
+
+```{r}
+plot_tk_status_old <- group_tk_old_reorder %>%
+  pivot_longer(cols = c('live', 'dead', 'topkill'), 
+               names_to = 'status',
+               values_to = 'count')
+
+
+ggplot(data = plot_tk_status_old, aes(fill = status, x = treatment_burn, y = count))+
+  geom_bar(stat= "identity", 
+           position= "stack",
+           color="black")+
+   scale_fill_manual(values = c('chocolate', 'darkgreen', 'green'))+
+ # geom_text(aes(y = 30,label= treatment_burn),
+ #           position = position_dodge(width = .9),
+ #           angle = 90,
+  #          fontface= "bold")+
+  facet_wrap(~monitoring_status)+
+  ylab('Number of Trees') + 
+  xlab('Treatment')+
+  ggtitle("Adult Quercus kelloggii- Old Exp.")+
+  theme_classic()+
+  theme(axis.text.x = element_text(size =9, angle = 25, hjust =1))
+
+ggsave(here::here("figures", "oldexp_adults_count.jpg"),
+       device = "jpg")
+```
+
+
+GGPlot of Old Experiment with Dead before burn taken out!
+```{r}
+#Reading in new csv with intial dead subtracted out in Excel
+oldexp_adult_no_dead <- read_csv(here('group_tk_old_no_dead.csv'))
+
+
+#ggplot
+
+oldexp_adult_no_dead_reorder <- oldexp_adult_no_dead %>% 
+  mutate(monitoring_status=fct_relevel(monitoring_status, "PreBurn", "PostBurnYear1", "PostBurnYear2")) %>%
+  arrange(monitoring_status)# Arranges the data frame by this variable
+
+plot_status_no_dead <- oldexp_adult_no_dead_reorder %>%
+  pivot_longer(cols = c('live', 'dead', 'topkill'), 
+               names_to = 'status',
+               values_to = 'count')
+
+
+ggplot(data = plot_status_no_dead, aes(fill = status, x = treatment_burn, y = count))+
+  geom_bar(stat= "identity", 
+           position= "stack",
+           color="black")+
+   scale_fill_manual(values = c('chocolate', 'darkgreen', 'green'))+
+ # geom_text(aes(y = 30,label= treatment_burn),
+ #           position = position_dodge(width = .9),
+ #           angle = 90,
+  #          fontface= "bold")+
+  facet_wrap(~monitoring_status)+
+  ylab('Number of Trees') + 
+  xlab('Treatment')+
+  ggtitle("Adult Quercus kelloggii- Old Exp.")+
+  theme_classic()+
+  theme(axis.text.x = element_text(size =9, angle = 25, hjust =1))
+
+ggsave(here::here("figures", "oldexp_adults_count_no_dead.jpg"),
+       device = "jpg")
+```
+
+
+
+
+
+
+

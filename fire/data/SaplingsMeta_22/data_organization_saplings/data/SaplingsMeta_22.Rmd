@@ -1,0 +1,66 @@
+---
+title: "SaplingsMeta_22"
+author: "Ryan Fass"
+date: "2022-12-19"
+output: html_document
+---
+
+```{r setup, include=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(janitor)
+library(here)
+library(gapminder)
+library(dplyr)
+
+```
+
+Read in all sapling data from different treatments
+```{r}
+oak_saplings_1 <- read_csv(here("oak_treat1_all.csv")) %>% 
+  clean_names() %>%
+  mutate(treatment="treatment1")
+oak_saplings_2 <- read_csv(here("oak_treat2_all.csv"))%>% 
+  clean_names() %>%
+  mutate(treatment="treatment2")
+oak_saplings_3 <- read_csv(here("oak_treat3_all.csv"))%>% 
+  clean_names() %>%
+  mutate(treatment="treatment3")
+oak_saplings_4 <- read_csv(here("oak_treat4_all.csv"))%>% 
+  clean_names() %>%
+  mutate(treatment="treatment4")
+oak_saplings_controls <- read_csv(here("oak_treat_controls_all.csv"))%>% 
+  clean_names() %>%
+  mutate(treatment="treatment_control")
+oak_saplings_13 <- read_csv(here("oak_treat13_all.csv"))%>% 
+  clean_names() %>%
+  mutate(treatment="treatment_13")
+plot_treatment <- read_csv(here("plot_treatment_exp.csv"))%>%
+  clean_names()
+head(oak_saplings_1)
+
+```
+
+Joining multiple sapling data frames...
+```{r}
+#put all data frames into a list
+sap_list <- rbind(oak_saplings_1, oak_saplings_2, oak_saplings_3, oak_saplings_4, oak_saplings_controls, oak_saplings_13)
+
+sap_master <- full_join(sap_list, plot_treatment, by= c("macro_plot_name" = "macro_plot_name"))
+
+sap_master
+
+
+```
+
+Rename uv1 to 'tag_id'
+```{r}
+sap_master <- sap_master %>% 
+       rename("tag_id" = "uv1")
+sap_master
+
+```
+
