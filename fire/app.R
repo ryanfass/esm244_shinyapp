@@ -30,7 +30,19 @@ ui <- fluidPage(theme = shinytheme("superhero"),
                                  )
                                )
                                ),
-                      tabPanel("Fuel Loading"),
+                      tabPanel("Fuel Loading",
+                               sidebarLayout(
+                                 sidebarPanel(checkboxGroupInput("checkGroup", label = h3("Fuel Type (tons/acre)"), 
+                                                                 choices = list("1 hr" = 1, "10hr" = 2, "100hr" = 3, "1000hr"= 4, "Duff and litter"= 5, "Total Fuel"= 6),
+                                                                 selected = 1),
+                                              
+                                              
+                                              hr(),
+                                              fluidRow(column(3, verbatimTextOutput("value")))),
+                                 mainPanel = (
+                                   plotOutput("")
+                                 )
+                               )),
                       tabPanel("Fire Behavior")
                       )
 ) ### end fluidPage
@@ -56,7 +68,7 @@ server <- function(input, output) {
         facet_wrap(~monitoring_status)+
         ylab('Number of Trees') + 
         xlab('Treatment')+
-        ggtitle("Adult Quercus kelloggii- Old Exp.")+
+        ggtitle("Quercus kelloggii")+
         theme_classic()+
         theme(axis.text.x = element_text(size =9, angle = 25, hjust =1))
       
