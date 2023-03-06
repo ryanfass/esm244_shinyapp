@@ -24,7 +24,7 @@ ui <- fluidPage(theme = shinytheme("superhero"),
                                sidebarLayout(
                                  sidebarPanel(radioButtons(inputId = 'life_stage',
                                                            label = "Choose Black Oak Life-stage",
-                                                           choices = trees_old$life_stage)),
+                                                           choices = c("Adult"= "adult","Sapling"= "sapling"))),
                                  mainPanel(
                                    plotOutput("distPlot")
                                  )
@@ -39,9 +39,12 @@ ui <- fluidPage(theme = shinytheme("superhero"),
 server <- function(input, output) {
 
     output$distPlot <- renderPlot({
-      tree_old %>% 
-        filter(order== input$life_stage) %>% 
-      ggplot(data = trees_old, aes(fill = status, x = treatment_burn, y = count))+
+      message("inside distplot, input$life_stage=", input$life_stage)
+      trees_old %>% 
+        mutate(monitoring_status=fct_relevel(monitoring_status, "PreBurn", "PostBurnYear1", "PostBurnYear2")) %>%
+        arrange(monitoring_status) %>% 
+        filter(life_stage == input$life_stage) %>% 
+      ggplot(aes(fill = status, x = treatment_burn, y = count))+
         geom_bar(stat= "identity", 
                  position= "stack",
                  color="black")+
