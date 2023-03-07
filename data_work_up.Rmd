@@ -1,0 +1,30 @@
+---
+title: "data work up"
+author: "Ryan Fass"
+date: "2023-03-06"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(janitor)
+library(here)
+
+```
+
+```{r}
+fuels_old <- read_csv("fire/data/fuels/fuels_old_summary.csv")
+```
+```{r}
+fuels_old %>% 
+  pivot_longer(cols = c(5:19), 
+               names_to = 'fuel_type',
+                values_to = 'tons_per_acre') 
+  # # filter(fuel_type == "fuel_type") %>% 
+  # group_by( monitoring_status, treatment_burn) %>% 
+  # summarise(mean_ton_acre = mean(tons_per_acre)
+
+
+```
+
