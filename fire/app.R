@@ -2,6 +2,8 @@ library(tidyverse)
 library(shiny)
 library(shinythemes)
 library(shinyWidgets)
+library(sf)
+library(tmap)
 # source("/helpers.R")
 trees_old <- read_csv("data/Laguna_TreesRaw_Master/plot_lifestage_shiny.csv")
 fuels_old <- read_csv("data/fuels/fuels_old_summary.csv")
@@ -35,7 +37,8 @@ ui <- fluidPage(theme = shinytheme("superhero"),
                                sidebarLayout(
                                  sidebarPanel(checkboxGroupInput(inputId = "fuel_type", 
                                                                  label = h3("Choose Fuel Type (tons/acre)"), 
-                                                                 choices = list("1 hr" = "ton_acre_1hr", "10hr" = "ton_acre_10hr", "100hr" = "ton_acre_100hr", "1000hr"= "ton_total_1000hr", "Duff and litter"= "duff_litter_tons", "Total Fuel"= "total_tons_acre")),
+                                                                 choices = list("1 hr" = "ton_acre_1hr", "10hr" = "ton_acre_10hr", "100hr" = "ton_acre_100hr", "1000hr"= "ton_total_1000hr", "Duff and litter"= "duff_litter_tons", "Total Fuel"= "total_tons_acre"), 
+                                                                 selected = 1),
                                                                  
                                             ),
                                  mainPanel = (
@@ -80,17 +83,23 @@ server <- function(input, output) {
       pivot_longer(cols = c(5:19),
                    names_to = 'fuel_type',
                    values_to = 'tons_per_acre') %>%
-      filter(fuel_type == input$fuel_type) %>% 
-      group_by( monitoring_status, treatment_burn) %>% 
+      mutate(monitoring_status=fct_relevel(monitoring_status, "PreBurn", "PostBurnYear1", "PostBurnYear2")) %>%
+      arrange(monitoring_status) %>% 
+      filter(fuel_type %in% input$fuel_type) %>% 
+      group_by( monitoring_status, treatment_burn, fuel_type) %>% ### Added fuel_type
       summarise(mean_ton_acre = mean(tons_per_acre))
     return(x)
   })      
     
 ####Fuels output plot
   output$fuelPlot <- renderPlot({
-     ggplot(data=fuel_reactive(), aes(x=treatment_burn, y=tons_per_acre, fill= treatment_burn)) +
+     ggplot(data=fuel_reactive(), aes(x=fuel_type, y=mean_ton_acre, fill= treatment_burn)) +  ### Changed x from treatment_burn to fuel_type
       geom_bar(stat = "identity", position = position_dodge()) +
       scale_fill_manual(values = c('tan', 'brown', 'darkgreen'))+
+      facet_wrap(~monitoring_status)+  
+      xlab("")+
+      theme_classic()+
+      theme(axis.text.x = element_text(size =9, angle = 25, hjust =1))+
       ggtitle("Fuels Tons Per Acre")
     
   })
