@@ -10,6 +10,9 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(janitor)
 library(here)
+library(sf)
+library(tmap)
+library(ggplot2)
 
 ```
 
@@ -17,14 +20,30 @@ library(here)
 fuels_old <- read_csv("fire/data/fuels/fuels_old_summary.csv")
 ```
 ```{r}
-fuels_old %>% 
-  pivot_longer(cols = c(5:19), 
-               names_to = 'fuel_type',
-                values_to = 'tons_per_acre') 
-  # # filter(fuel_type == "fuel_type") %>% 
-  # group_by( monitoring_status, treatment_burn) %>% 
-  # summarise(mean_ton_acre = mean(tons_per_acre)
+# fuels_old %>% 
+#   pivot_longer(cols = c(5:19), 
+#                names_to = 'fuel_type',
+#                 values_to = 'tons_per_acre') 
+#   # # filter(fuel_type == "fuel_type") %>% 
+#   # group_by( monitoring_status, treatment_burn) %>% 
+#   # summarise(mean_ton_acre = mean(tons_per_acre)
 
+
+```
+
+```{r}
+old_map <- read_sf(here('fire/data/map_old/July2020.shp')) %>% 
+  clean_names() %>% 
+  mutate(burn= recode(burn_type, 'Postbud break' ="leafout", 'Dormant'="dormant"))
+
+old_map %>% st_crs()
+
+
+ggplot() +
+  geom_sf(data= old_map, aes(fill= burn, geometry=geometry),
+          color = 'white', size = 0.1) +
+   scale_fill_gradientn(colors = c('green', 'tomato'))+
+  theme_void()
 
 ```
 

@@ -38,7 +38,7 @@ ui <- fluidPage(theme = shinytheme("superhero"),
                                  sidebarPanel(checkboxGroupInput(inputId = "fuel_type", 
                                                                  label = h3("Choose Fuel Type (tons/acre)"), 
                                                                  choices = list("1 hr" = "ton_acre_1hr", "10hr" = "ton_acre_10hr", "100hr" = "ton_acre_100hr", "1000hr"= "ton_total_1000hr", "Duff and litter"= "duff_litter_tons", "Total Fuel"= "total_tons_acre"), 
-                                                                 selected = 1),
+                                                                 selected = "ton_acre_1hr"),
                                                                  
                                             ),
                                  mainPanel = (
