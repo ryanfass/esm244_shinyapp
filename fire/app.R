@@ -7,6 +7,8 @@ library(tmap)
 # source("/helpers.R")
 trees_old <- read_csv("data/Laguna_TreesRaw_Master/plot_lifestage_shiny.csv")
 fuels_old <- read_csv("data/fuels/fuels_old_summary.csv")
+xpp_old <- read_csv("data/xpp_old_group_reorder.csv")
+
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(theme = shinytheme("superhero"),
@@ -24,6 +26,7 @@ ui <- fluidPage(theme = shinytheme("superhero"),
                                mainPanel(
                                  h2("Project Description"),
                                  p("Prescribed fire refers to the controlled application of fire by a team of fire experts with the goal to restore health to ecosystems that depend on fire.")),
+                      
                       tabPanel("Study Site",
                                mainPanel(
                                  tmapOutput("old_map")
@@ -32,7 +35,7 @@ ui <- fluidPage(theme = shinytheme("superhero"),
                        tabPanel("Trees",
                                sidebarLayout(
                                  sidebarPanel(radioButtons(inputId = 'life_stage',
-                                                           label = "Choose Black Oak Life-stage",
+                                                           label = "Choose Black Oak Life-stage", 
                                                            choices = c("Adult"= "adult","Sapling"= "sapling"))),
                                  mainPanel(
                                    plotOutput("distPlot")
@@ -53,7 +56,18 @@ ui <- fluidPage(theme = shinytheme("superhero"),
                                  )
                                )),
                      
-                       tabPanel("Fire Behavior")
+                       tabPanel("Xylem Pressure Potential",
+                                sidebarLayout(
+                                  sidebarPanel(selectInput(inputId = "adult_sapling", 
+                                                           label = h3("Select Black Oak Life-stage"), 
+                                                           choices = list("Adult" = "Adult", "Sapling" = "Sapling"), 
+                                                           selected = "Adult")),
+                                               mainPanel=(
+                                                 plotOutput("xppPlot")
+                                               )
+                                  )
+                                  ),
+                                
                       )
 ) ### end ui fluidPage
 
@@ -81,7 +95,7 @@ server <- function(input, output) {
         xlab('Treatment')+
         ggtitle("Quercus kelloggii")+
         theme_classic()+
-        theme(axis.text.x = element_text(size =9, angle = 25, hjust =1))
+        theme(axis.text.x = element_text(size =12, angle = 25, hjust =1), axis.title = element_text(size = 20),plot.title = element_text(size = 20),legend.text = element_text(size = 15), legend.title = element_text(size = 15), strip.text = element_text(size=20))
       
     })
 ####Fuels data Reactive
@@ -106,7 +120,7 @@ server <- function(input, output) {
       facet_wrap(~monitoring_status)+  
       xlab("")+
       theme_classic()+
-      theme(axis.text.x = element_text(size =9, angle = 25, hjust =1))+
+      theme(axis.text.x = element_text(size =15, angle = 25, hjust =1),axis.title = element_text(size = 15),plot.title = element_text(size = 20),legend.text = element_text(size = 15), legend.title = element_text(size = 15), strip.text = element_text(size=20))+
       ggtitle("Fuels Tons Per Acre")
     
   })
@@ -116,7 +130,27 @@ server <- function(input, output) {
     tm_shape(old_map) + #Look up vinette on tmap online
       tm_fill("burn", palette = 'BuGn') +
       tm_shape(cnf_plots_26911_sf) +
-      tm_dots( id = "plot_id", title = "tree_cover")
+      tm_dots( id = "plot_id",  "tree_cover")
+  })
+  
+####xpp plot
+  output$xppPlot <- renderPlot({
+      message("inside xxpplot, input$adult_sapling=", input$adult_sapling)
+     xpp_old %>% 
+       mutate(monitoring_status=fct_relevel(monitoring_status, "preburn", "postburn_year1")) %>%
+       arrange(monitoring_status) %>% 
+       filter(adult_sapling == input$adult_sapling) %>%
+    ggplot(data = xpp_old, aes( x = treatment, y = average))+
+      geom_bar(stat= "identity",
+               # color="black",
+               fill= "lightblue")+
+      facet_wrap(~monitoring_status)+
+      ylab('Number of Trees') + 
+      ggtitle("Old Experiment Adults- xylem pressure potentials")+
+      xlab('Monitoring Status')+
+      facet_wrap(~monitoring_status)+
+      theme_classic()+
+      theme(axis.text.x = element_text(size =15, angle = 25, hjust =1)) #puts a tilt on the x-axis labels
   })
 }
 

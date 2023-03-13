@@ -1,0 +1,13 @@
+,monitoring_status,treatment,experiment,adult_sapling,average
+1,preburn,control,old,Adult,-1.332142857
+2,preburn,control,old,Sapling,-1.995833333
+3,preburn,dormant_burn,old,Adult,-1.622916667
+4,preburn,dormant_burn,old,Sapling,-2.697916667
+5,preburn,leafout_burn,old,Adult,-1.411363636
+6,preburn,leafout_burn,old,Sapling,-2.2775
+7,postburn_year1,control,old,Adult,-2.421428571
+8,postburn_year1,control,old,Sapling,-2.7625
+9,postburn_year1,dormant_burn,old,Adult,-2.002083333
+10,postburn_year1,dormant_burn,old,Sapling,-2.15
+11,postburn_year1,leafout_burn,old,Adult,-1.335
+12,postburn_year1,leafout_burn,old,Sapling,-1.0875

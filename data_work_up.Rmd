@@ -84,6 +84,23 @@ tmap_mode('view')#Instead of 'view' use 'plot' to get static plot not interactiv
 tm_shape(old_map) + #Look up vinette on tmap online
   tm_fill("burn", palette = 'BuGn') +
   tm_shape(cnf_plots_26911_sf) +
-  tm_dots( id = "plot_id", title = "tree_cover")
+  tm_dots( id = "plot_id", "tree_cover")
+```
+```{r}
+xpp_old %>% 
+       mutate(monitoring_status=fct_relevel(monitoring_status, "preburn", "postburn_year1")) %>%
+       arrange(monitoring_status) %>% 
+       filter(adult_sapling == input$adult_sapling) %>%
+    ggplot(data = xpp_old, aes( x = treatment, y = average))+
+      geom_bar(stat= "identity",
+               # color="black",
+               fill= "lightblue")+
+      facet_wrap(~monitoring_status)+
+      ylab('Number of Trees') + 
+      ggtitle("Old Experiment Adults- xylem pressure potentials")+
+      xlab('Monitoring Status')+
+      facet_wrap(~monitoring_status)+
+      theme_classic()+
+      theme(axis.text.x = element_text(size =15, angle = 25, hjust =1)) #puts a tilt on the
 ```
 
