@@ -21,7 +21,14 @@ ui <- fluidPage(theme = shinytheme("superhero"),
         # Tabs of our different widgets
           tabsetPanel(type = "tabs",
                       tabPanel("What is Prescribed Fire?", tags$video(src="fire_timelapse.MOV",width= "300px", type="video/mp4", controls="controls")),
-                      tabPanel("Study Site"),
+                               mainPanel(
+                                 h2("Project Description"),
+                                 p("Prescribed fire refers to the controlled application of fire by a team of fire experts with the goal to restore health to ecosystems that depend on fire.")),
+                      tabPanel("Study Site",
+                               mainPanel(
+                                 tmapOutput("old_map")
+                               )
+                      ),
                        tabPanel("Trees",
                                sidebarLayout(
                                  sidebarPanel(radioButtons(inputId = 'life_stage',
@@ -102,6 +109,14 @@ server <- function(input, output) {
       theme(axis.text.x = element_text(size =9, angle = 25, hjust =1))+
       ggtitle("Fuels Tons Per Acre")
     
+  })
+  
+####Study Site Map
+  output$old_map <- renderTmap({
+    tm_shape(old_map) + #Look up vinette on tmap online
+      tm_fill("burn", palette = 'BuGn') +
+      tm_shape(cnf_plots_26911_sf) +
+      tm_dots( id = "plot_id", title = "tree_cover")
   })
 }
 

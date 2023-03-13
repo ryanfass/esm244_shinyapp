@@ -13,6 +13,7 @@ library(here)
 library(sf)
 library(tmap)
 library(ggplot2)
+library(dplyr)
 
 ```
 
@@ -42,8 +43,47 @@ old_map %>% st_crs()
 ggplot() +
   geom_sf(data= old_map, aes(fill= burn, geometry=geometry),
           color = 'white', size = 0.1) +
-   scale_fill_gradientn(colors = c('green', 'tomato'))+
+   scale_fill_manual(values = c('chocolate', 'darkgreen'))+
+  theme(legend.position = "none")+
   theme_void()
 
+```
+```{r}
+cnf_map <- read_sf(here('fire/data/map_old/Ecology_Plots_2021_ALL.shp')) %>% 
+  clean_names() 
+
+cnf_plots <- cnf_map %>% 
+ filter(site_year %in% c( "Laguna_2021"),
+        treatment != "Unit13") 
+
+cnf_plots %>% st_crs()
+
+cnf_plots_26911_sf <- st_transform(cnf_plots, 26911)
+
+cnf_plots_26911_sf %>% st_crs()
+# map_clean = select(map_clean,-c( tphh_ge_3, tphc_ge_3, stph_ge_25, bac_ge_3_2, bah_ge_3_2, cancov_201, stph_ge_26, tph_ge_3_2, tphc_ge_31, fuel_ht, l_con_ba_dbh, l_har_ba_dbh, d_har_ba_dbh, !d_con_ba_dbh)) 
+
+```
+
+```{r}
+ggplot() +
+   geom_sf(data= old_map, aes(fill= burn, geometry=geometry),
+          color = 'white', size = 0.1) +
+   scale_fill_manual(values = c('chocolate', 'darkgreen'))+
+  #order you put in your code is the order it will occur on your plot first start with your base and build on top of that
+  geom_sf(data = cnf_plots_26911_sf, size =1, color = 'red')+
+  theme_void()
+```
+
+
+## Make an interactive map
+```{r}
+### set tmap interactive mode
+tmap_mode('view')#Instead of 'view' use 'plot' to get static plot not interactive
+
+tm_shape(old_map) + #Look up vinette on tmap online
+  tm_fill("burn", palette = 'BuGn') +
+  tm_shape(cnf_plots_26911_sf) +
+  tm_dots( id = "plot_id", title = "tree_cover")
 ```
 
