@@ -36,10 +36,26 @@ ui <- fluidPage(theme = shinytheme("superhero"),
 
         # Tabs of our different widgets
           tabsetPanel(type = "tabs",
-                      tabPanel("What is Prescribed Fire?", tags$video(src="fire_timelapse.MOV",width= "300px", type="video/mp4", controls="controls")),
+                      tabPanel("What is Prescribed Fire?",
+                               sidebarPanel(
+                               tags$video(src="fire_timelapse.MOV",
+                                          width= "300px",
+                                          type="video/mp4", controls="controls")
+                               ),
                                mainPanel(
                                  h2("Project Description"),
-                                 p("Prescribed fire refers to the controlled application of fire by a team of fire experts with the goal to restore health to ecosystems that depend on fire.")),
+                                 p("Prescribed fire refers to the controlled application of 
+                                   fire by a team of fire experts with the goal to restore health 
+                                   to ecosystems that depend on fire."),
+                                 p("There is a critical need for increased efforts in fire management 
+                                   via prescribed fire, but the logistical infeasibility of widespread 
+                                   fire application during short ‘burn windows’ of favorable ecological, 
+                                   weather and fuels conditions drastically limits implementation"),
+                                 p("Our experiment set out to test whether extending their burn season 
+                                   beyond black oak leaf-out in the spring would result in increased black 
+                                   oak mortality or negatively affect black oak regeneration.")
+                                 )
+                               ),
                       
                       tabPanel("Study Site",
                                mainPanel(
