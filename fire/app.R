@@ -4,6 +4,10 @@ library(shinythemes)
 library(shinyWidgets)
 library(sf)
 library(tmap)
+library(dplyr)
+library(janitor)
+library(here)
+
 # source("/helpers.R")
 trees_old <- read_csv("data/Laguna_TreesRaw_Master/plot_lifestage_shiny.csv")
 fuels_old <- read_csv("data/fuels/fuels_old_summary.csv")
@@ -150,7 +154,14 @@ server <- function(input, output) {
       facet_wrap(~monitoring_status)+  
       xlab("")+
       theme_classic()+
-      theme(axis.text.x = element_text(size =15, angle = 25, hjust =1),axis.title = element_text(size = 15),plot.title = element_text(size = 20),legend.text = element_text(size = 15), legend.title = element_text(size = 15), strip.text = element_text(size=20))+
+      theme(axis.text.x = element_text(size =15, 
+                                       angle = 25, 
+                                       hjust =1),
+            axis.title = element_text(size = 15),
+            plot.title = element_text(size = 20),
+            legend.text = element_text(size = 15), 
+            legend.title = element_text(size = 15), 
+            strip.text = element_text(size=20))+
       ggtitle("Fuels Tons Per Acre")
     
   })
@@ -179,7 +190,13 @@ server <- function(input, output) {
       xlab('Monitoring Status')+
       facet_wrap(~monitoring_status)+
       theme_classic()+
-      theme(axis.text.x = element_text(size =18, angle = 25, hjust =1), axis.title = element_text(size = 20),plot.title = element_text(size = 20),legend.text = element_text(size = 15), legend.title = element_text(size = 15), strip.text = element_text(size=20)) #puts a tilt on the x-axis labels
+      theme(axis.text.x = element_text(size =18, 
+            angle = 25, hjust =1), 
+            axis.title = element_text(size = 20),
+            plot.title = element_text(size = 20),
+            legend.text = element_text(size = 15), 
+            legend.title = element_text(size = 15), 
+            strip.text = element_text(size=20)) #puts a tilt on the x-axis labels
   })
 }
 
