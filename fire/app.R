@@ -8,6 +8,20 @@ library(tmap)
 trees_old <- read_csv("data/Laguna_TreesRaw_Master/plot_lifestage_shiny.csv")
 fuels_old <- read_csv("data/fuels/fuels_old_summary.csv")
 xpp_old <- read_csv("data/xpp_old_group_reorder.csv")
+old_map <- read_sf(here('fire/data/map_old/July2020.shp')) %>% 
+  clean_names() %>% 
+  mutate(burn= recode(burn_type, 'Postbud break' ="leafout", 'Dormant'="dormant"))
+
+cnf_map <- read_sf(here('fire/data/map_old/Ecology_Plots_2021_ALL.shp')) %>% 
+  clean_names() 
+
+cnf_plots <- cnf_map %>% 
+  filter(site_year %in% c( "Laguna_2021"),
+         treatment != "Unit13") 
+
+
+cnf_plots_26911_sf <- st_transform(cnf_plots, 26911)
+
 
 
 # Define UI for application that draws a histogram
@@ -135,12 +149,11 @@ server <- function(input, output) {
   
 ####xpp plot
   output$xppPlot <- renderPlot({
-      message("inside xxpplot, input$adult_sapling=", input$adult_sapling)
      xpp_old %>% 
        mutate(monitoring_status=fct_relevel(monitoring_status, "preburn", "postburn_year1")) %>%
        arrange(monitoring_status) %>% 
        filter(adult_sapling == input$adult_sapling) %>%
-    ggplot(data = xpp_old, aes( x = treatment, y = average))+
+    ggplot( aes( x = treatment, y = average))+
       geom_bar(stat= "identity",
                # color="black",
                fill= "lightblue")+
@@ -150,7 +163,7 @@ server <- function(input, output) {
       xlab('Monitoring Status')+
       facet_wrap(~monitoring_status)+
       theme_classic()+
-      theme(axis.text.x = element_text(size =15, angle = 25, hjust =1)) #puts a tilt on the x-axis labels
+      theme(axis.text.x = element_text(size =18, angle = 25, hjust =1), axis.title = element_text(size = 20),plot.title = element_text(size = 20),legend.text = element_text(size = 15), legend.title = element_text(size = 15), strip.text = element_text(size=20)) #puts a tilt on the x-axis labels
   })
 }
 
