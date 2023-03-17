@@ -40,14 +40,14 @@ ui <- fluidPage(theme = shinytheme("superhero"),
 
         # Tabs of our different widgets
           tabsetPanel(type = "tabs",
-                      tabPanel("What is Prescribed Fire?",
+                      tabPanel("Project Description",
                                sidebarPanel(
                                tags$video(src="fire_timelapse.MOV",
                                           width= "300px",
                                           type="video/mp4", controls="controls")
                                ),
                                mainPanel(
-                                 h2("Prescribed Fire Management"),
+                                 h2("What is prescribed fire?"),
                                  p("Prescribed fire refers to the controlled application of 
                                    fire by a team of fire experts with the goal to restore health 
                                    to ecosystems that depend on fire."),
@@ -60,20 +60,22 @@ ui <- fluidPage(theme = shinytheme("superhero"),
                                  p("Though the need for more prescribed fire management is 
                                    urgent, land managers are limited by time of year and fuel buildup, 
                                    but also by the phenology of species of concern. Due to drought and 
-                                   golden spotted oak borer (GSOB) presence, the CNF burn window is restricted
+                                   golden spotted oak borer (GSOB) presence, the Cleveland National Forests burn window is restricted
                                    to periods of black oak (Quercus kelloggii) dormancy. However, this 
                                    restriction was put in place based on the precautionary principle 
-                                   (not wanting to do harm to oaks in the absence of data).Our experiment set 
+                                   (not wanting to do harm to oaks in the absence of data). Our experiment set 
                                    out to test whether extending the Forest Service burn season 
                                    beyond black oak leaf-out in the spring would result in increased black 
-                                   oak mortality or negatively affect black oak regeneration.We conducted 
+                                   oak mortality or negatively affect black oak regeneration. We conducted 
                                    a controlled burn experiment, with prescribed burns applied to experimental 
-                                   plots either prior two oak budburst or 3-6 weeks following bud burst, 
-                                   replicated in two climatically disparate years. We tracked the initial 
+                                   plots either prior to oak budburst or 3-6 weeks following bud burst. We tracked the initial 
                                    burn severity of mature and sapling oaks, as well as survival and 
                                    resprouting for multiple years after the burn. In addition, we examine 
                                    black oak physiology through xylem pressure potentials to understand sub-lethal
-                                   physiological stress that could result in eventual lagged mortality. ")
+                                   physiological stress that could result in eventual lagged mortality. "),
+                                 h3("The Tabs"),
+                                 p("Click on the tabs above to explore the affects of prescribed fire timing on black oak 
+                                   survivorship, fuel-loading, and black oak physiology.")
                                  )
                                ),
                       
@@ -87,10 +89,8 @@ ui <- fluidPage(theme = shinytheme("superhero"),
                                    their prescribed burn window in order to get more prescribed fire on 
                                    the ground. "),
                                 
-                                 p("There is a critical need for increased efforts in fire management 
-                                   via prescribed fire, but the logistical infeasibility of widespread 
-                                   fire application during short ‘burn windows’ of favorable ecological, 
-                                   weather and fuels conditions drastically limits implementation"),
+                                 p("Mount Laguna sits at about 5,700 feet elevation and is a mixed-conifer, hardwood forest. 
+                                   Composed of Jeffery Pine, Black Oak, and Coast-live Oak."),
                                  h3("Map Description"),
                                  p("This map shows our experimental design and plots with tree cover percent after
                                     the experimental burns. The dark green is the 
@@ -110,7 +110,13 @@ ui <- fluidPage(theme = shinytheme("superhero"),
                                                            label = "Choose Black Oak Life-stage", 
                                                            choices = c("Adult"= "adult","Sapling"= "sapling"))),
                                  mainPanel(
-                                   plotOutput("distPlot")
+                                   plotOutput("distPlot"),
+                                   h3("Tree Status"),
+                                   p("Here you can look at how prescribed fire at different times of the burn season
+                                     effected black oak survivorship at two different life stages."),
+                                   p("Top-Kill: Black oaks have evovled adaptations to fire. Top-kill represents oaks
+                                     that saw hight severity fire (lost all their canopy biomass), but were able to persist
+                                     by basal resprouting at the base.")
                                  )
                                )
                                ),
@@ -136,6 +142,15 @@ ui <- fluidPage(theme = shinytheme("superhero"),
                                                            selected = "Adult")),
                                                mainPanel=(
                                                  plotOutput("xppPlot")
+                                                 # h3("Xylem Pressure Potentials (XPP)"),
+                                                 # p("Predawn xylem pressure potentials are a measure of the water 
+                                                 #   potential in the xylem tissue of plants. And are collected inbetween
+                                                 #   2am and 5am, when plants are most dormant. Low predawn xylem 
+                                                 #   pressure potentials (more negative) indicate that the plant is 
+                                                 #   experiencing water stress"),
+                                                 # p("We collected XPP as a metric to understand more long-term affects of 
+                                                 #   prescribed fire on oaks. For example, higher water stress after fire 
+                                                 #   may indicate a potential for lagged mortality.")
                                                )
                                   )
                                   ),
