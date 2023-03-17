@@ -140,17 +140,18 @@ ui <- fluidPage(theme = shinytheme("superhero"),
                                                            label = h3("Select Black Oak Life-stage"), 
                                                            choices = list("Adult" = "Adult", "Sapling" = "Sapling"), 
                                                            selected = "Adult")),
-                                               mainPanel=(
-                                                 plotOutput("xppPlot")
-                                                 # h3("Xylem Pressure Potentials (XPP)"),
-                                                 # p("Predawn xylem pressure potentials are a measure of the water 
-                                                 #   potential in the xylem tissue of plants. And are collected inbetween
-                                                 #   2am and 5am, when plants are most dormant. Low predawn xylem 
-                                                 #   pressure potentials (more negative) indicate that the plant is 
-                                                 #   experiencing water stress"),
-                                                 # p("We collected XPP as a metric to understand more long-term affects of 
-                                                 #   prescribed fire on oaks. For example, higher water stress after fire 
-                                                 #   may indicate a potential for lagged mortality.")
+                                               mainPanel(
+                                                 plotOutput("xppPlot"),
+                                                 h3("Xylem Pressure Potentials (XPP)"),
+                                                 p("Predawn xylem pressure potentials are a measure of the water
+                                                   potential in the xylem tissue of plants. They are collected between
+                                                   2am and 5am, when plants are most dormant. Low predawn xylem
+                                                   pressure potentials (more negative) indicate that the plant is
+                                                   experiencing water stress"),
+                                                 p("We collected XPP as a metric to understand more long-term affects of
+                                                   prescribed fire on oaks. For example, higher water stress after fire
+                                                   may indicate a potential for lagged mortality."),
+                                                 p("Here we can explore how fire impacts black oak water stress in adults and saplings.")
                                                )
                                   )
                                   ),
